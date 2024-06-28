@@ -12,13 +12,13 @@ enum SystemStatusTypeEnum {
   String get getIconName {
     switch (this) {
       case memoryStatistics:
-        return "memorychip";
+        return 'memorychip';
       case cpuUsage:
-        return "cpu";
+        return 'cpu';
       case batteryStatus:
-        return "battery.100";
+        return 'battery.100';
       case diskSpace:
-        return "opticaldiscdrive";
+        return 'opticaldiscdrive';
     }
   }
 }
