@@ -1,10 +1,8 @@
 name: system_status_platform_interface
 description: A common platform interface for the system_status plugin.
-# repository: 
+repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status/system_status_platform_interface
 version: 1.0.0
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'system_status_platform_interface' # Remove this line if you wish to publish to pub.dev
+publish_to: 'system_status_platform_interface' 
 
 
 environment:
