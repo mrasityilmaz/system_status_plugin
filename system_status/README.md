@@ -1,39 +1,50 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# system_status_plugin
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<!-- ![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg) -->
+![Platform](https://img.shields.io/badge/Platform-MacOS-green.svg)
+[![pub package](https://img.shields.io/pub/v/system_status_plugin.svg)](https://pub.dev/packages/system_status_plugin)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+system_status_plugin is a Flutter plugin that provides system status monitoring capabilities for MacOS computers. It allows you to monitor and display real-time statistics of RAM, battery, storage, and CPU usage.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Real-time monitoring of system resources: RAM, battery, storage, and CPU.
+- User-friendly interface for easy integration and usage.
+- Supports MacOS 10.13 and above.
+- Low system resource usage, optimized for performance monitoring without overhead.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this plugin, add `system_status_plugin` as a dependency in your `pubspec.yaml` file.
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  system_status_plugin: ^1.0.0
+```
+
+Then, import the package where you need to use it:
+
+
+```yaml
+import 'package:system_status_plugin/system_status_plugin.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+```Dart
+// Initialize the plugin
+SystemStatusPlugin systemStatus = SystemStatusPlugin();
 
-```dart
-const like = 'sample';
+// Get system status information
+void getSystemStatus() async {
+  try {
+    SystemStatusInfo status = await systemStatus.getSystemStatus();
+   
+    print('System Status: ${status}');
+  } catch (e) {
+    print('Error retrieving system status: $e');
+  }
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.

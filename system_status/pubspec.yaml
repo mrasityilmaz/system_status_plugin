@@ -3,23 +3,19 @@ description: The system_status Plugin is a powerful and user-friendly tool desig
 repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status
 version: 1.0.0
 homepage: "https://github.com/mrasityilmaz/system_status_plugin"
-publish_to: 'system_status' 
-
-
 
 environment:
-  sdk: '>=3.5.0-218.0.dev <4.0.0'
-
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=3.22.2'
+  
 
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  system_status_macos: 
-    path : '../system_status_macos'
-  system_status_platform_interface: 
-    path : '../system_status_platform_interface'
+  system_status_macos: ^1.0.0
+  system_status_platform_interface: ^1.0.0
 
 
 dev_dependencies:
