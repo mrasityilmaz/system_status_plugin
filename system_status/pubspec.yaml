@@ -14,7 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  system_status_macos: ^1.0.0
+  system_status_macos: 
+    path: ../system_status_macos
   system_status_platform_interface: ^1.0.0
 
 

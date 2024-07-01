@@ -15,7 +15,7 @@ flutter:
     platforms:
       macos:
         pluginClass: SystemStatusPlugin
-        dartPluginClass: SytemStatusMacOS
+        dartPluginClass: SystemStatusMacOS
 
 
 dependencies:

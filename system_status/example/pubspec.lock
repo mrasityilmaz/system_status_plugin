@@ -210,10 +210,9 @@ packages:
   system_status_macos:
     dependency: transitive
     description:
-      name: system_status_macos
-      sha256: "8725ee92e2d7cd6d03182740164b1b874a9fc5b28513d2eb99fde3f6f6074b60"
-      url: "https://pub.dev"
-    source: hosted
+      path: "../../system_status_macos"
+      relative: true
+    source: path
     version: "1.0.0"
   system_status_platform_interface:
     dependency: transitive

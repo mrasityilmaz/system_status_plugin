@@ -3,7 +3,7 @@
 # # Run `pod lib lint SystemStatus.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'SystemStatus'
+  s.name             = 'system_status_macos'
   s.version          = '1.0.4'
   s.summary          = 'An MacOS implementation of the system_status plugin.'
   s.description      = <<-DESC
@@ -20,6 +20,9 @@ Pod::Spec.new do |s|
 		   s.platform = :osx, '10.14'
 		   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 		   s.swift_version = '5.0'
+  # Framework linking is handled by Flutter tooling, not CocoaPods.
+  # Add a placeholder to satisfy `s.dependency 'SystemStatus'` plugin podspecs.
+  s.vendored_frameworks = 'path/to/nothing'
 end
 
 
