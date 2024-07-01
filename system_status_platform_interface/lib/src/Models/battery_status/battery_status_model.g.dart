@@ -18,7 +18,7 @@ _$BatteryStatusModelImpl _$$BatteryStatusModelImplFromJson(
       voltage: (json['voltage'] as num?)?.toDouble(),
       watts: (json['watts'] as num?)?.toDouble(),
       temperature: (json['temperature'] as num?)?.toDouble(),
-      healthString: json['healthString'] as String? ?? "Unknown",
+      healthString: json['healthString'] as String? ?? 'Unknown',
     );
 
 Map<String, dynamic> _$$BatteryStatusModelImplToJson(

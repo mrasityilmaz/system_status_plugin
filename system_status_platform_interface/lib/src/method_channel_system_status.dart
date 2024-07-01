@@ -10,10 +10,11 @@ import 'package:system_status_platform_interface/system_status_platform_interfac
 
 /// An implementation of [SystemStatusPlatform]
 /// that uses method channels.
-class MethodChannelSytemStatus extends SystemStatusPlatform {
+class MethodChannelSystemStatus extends SystemStatusPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('system_status');
+
   @override
   Future<SystemStatusModel?> getSystemStatus({Set<SystemStatusTypeEnum>? systemStatusTypes}) async {
     try {

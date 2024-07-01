@@ -20,9 +20,16 @@ DiskSpaceModel _$DiskSpaceModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DiskSpaceModel {
+  /// Total disk space in bytes.
   int? get totalDiskSpace => throw _privateConstructorUsedError;
+
+  /// Free disk space in bytes.
   int? get freeDiskSpace => throw _privateConstructorUsedError;
+
+  /// Used disk space in bytes.
   int? get usedDiskSpace => throw _privateConstructorUsedError;
+
+  /// Used disk space percentage.
   double? get usedPercentage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -137,22 +144,30 @@ class __$$DiskSpaceModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DiskSpaceModelImpl implements _DiskSpaceModel {
+class _$DiskSpaceModelImpl extends _DiskSpaceModel {
   const _$DiskSpaceModelImpl(
       {this.totalDiskSpace,
       this.freeDiskSpace,
       this.usedDiskSpace,
-      this.usedPercentage});
+      this.usedPercentage})
+      : super._();
 
   factory _$DiskSpaceModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$DiskSpaceModelImplFromJson(json);
 
+  /// Total disk space in bytes.
   @override
   final int? totalDiskSpace;
+
+  /// Free disk space in bytes.
   @override
   final int? freeDiskSpace;
+
+  /// Used disk space in bytes.
   @override
   final int? usedDiskSpace;
+
+  /// Used disk space percentage.
   @override
   final double? usedPercentage;
 
@@ -196,23 +211,32 @@ class _$DiskSpaceModelImpl implements _DiskSpaceModel {
   }
 }
 
-abstract class _DiskSpaceModel implements DiskSpaceModel {
+abstract class _DiskSpaceModel extends DiskSpaceModel {
   const factory _DiskSpaceModel(
       {final int? totalDiskSpace,
       final int? freeDiskSpace,
       final int? usedDiskSpace,
       final double? usedPercentage}) = _$DiskSpaceModelImpl;
+  const _DiskSpaceModel._() : super._();
 
   factory _DiskSpaceModel.fromJson(Map<String, dynamic> json) =
       _$DiskSpaceModelImpl.fromJson;
 
   @override
+
+  /// Total disk space in bytes.
   int? get totalDiskSpace;
   @override
+
+  /// Free disk space in bytes.
   int? get freeDiskSpace;
   @override
+
+  /// Used disk space in bytes.
   int? get usedDiskSpace;
   @override
+
+  /// Used disk space percentage.
   double? get usedPercentage;
   @override
   @JsonKey(ignore: true)

@@ -21,10 +21,19 @@ MemoryStatisticsModel _$MemoryStatisticsModelFromJson(
 
 /// @nodoc
 mixin _$MemoryStatisticsModel {
+  /// The ratio of memory usage as a percentage of total physical memory.
   double? get memoryUsageRatio => throw _privateConstructorUsedError;
+
+  /// The amount of application memory used in bytes.
   double? get applicationMemory => throw _privateConstructorUsedError;
+
+  /// The amount of wired memory used in bytes.
   double? get wiredMemory => throw _privateConstructorUsedError;
+
+  /// The amount of compressed memory used in bytes.
   double? get compressedMemory => throw _privateConstructorUsedError;
+
+  /// The memory pressure level.
   double? get memoryPressure => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -154,25 +163,35 @@ class __$$MemoryStatisticsModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MemoryStatisticsModelImpl implements _MemoryStatisticsModel {
+class _$MemoryStatisticsModelImpl extends _MemoryStatisticsModel {
   const _$MemoryStatisticsModelImpl(
       {this.memoryUsageRatio,
       this.applicationMemory,
       this.wiredMemory,
       this.compressedMemory,
-      this.memoryPressure});
+      this.memoryPressure})
+      : super._();
 
   factory _$MemoryStatisticsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MemoryStatisticsModelImplFromJson(json);
 
+  /// The ratio of memory usage as a percentage of total physical memory.
   @override
   final double? memoryUsageRatio;
+
+  /// The amount of application memory used in bytes.
   @override
   final double? applicationMemory;
+
+  /// The amount of wired memory used in bytes.
   @override
   final double? wiredMemory;
+
+  /// The amount of compressed memory used in bytes.
   @override
   final double? compressedMemory;
+
+  /// The memory pressure level.
   @override
   final double? memoryPressure;
 
@@ -218,26 +237,37 @@ class _$MemoryStatisticsModelImpl implements _MemoryStatisticsModel {
   }
 }
 
-abstract class _MemoryStatisticsModel implements MemoryStatisticsModel {
+abstract class _MemoryStatisticsModel extends MemoryStatisticsModel {
   const factory _MemoryStatisticsModel(
       {final double? memoryUsageRatio,
       final double? applicationMemory,
       final double? wiredMemory,
       final double? compressedMemory,
       final double? memoryPressure}) = _$MemoryStatisticsModelImpl;
+  const _MemoryStatisticsModel._() : super._();
 
   factory _MemoryStatisticsModel.fromJson(Map<String, dynamic> json) =
       _$MemoryStatisticsModelImpl.fromJson;
 
   @override
+
+  /// The ratio of memory usage as a percentage of total physical memory.
   double? get memoryUsageRatio;
   @override
+
+  /// The amount of application memory used in bytes.
   double? get applicationMemory;
   @override
+
+  /// The amount of wired memory used in bytes.
   double? get wiredMemory;
   @override
+
+  /// The amount of compressed memory used in bytes.
   double? get compressedMemory;
   @override
+
+  /// The memory pressure level.
   double? get memoryPressure;
   @override
   @JsonKey(ignore: true)

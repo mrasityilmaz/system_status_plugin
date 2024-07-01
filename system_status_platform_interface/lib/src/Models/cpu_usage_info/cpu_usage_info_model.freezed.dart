@@ -20,8 +20,13 @@ CpuUsageInfoModel _$CpuUsageInfoModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CpuUsageInfoModel {
+  /// The percentage of CPU time spent on user processes.
   double? get userPercentage => throw _privateConstructorUsedError;
+
+  /// The percentage of CPU time spent on system (kernel) processes.
   double? get sysPercentage => throw _privateConstructorUsedError;
+
+  /// The percentage of CPU time spent idle.
   double? get idlePercentage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -120,17 +125,23 @@ class __$$CpuUsageInfoModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CpuUsageInfoModelImpl implements _CpuUsageInfoModel {
+class _$CpuUsageInfoModelImpl extends _CpuUsageInfoModel {
   const _$CpuUsageInfoModelImpl(
-      {this.userPercentage, this.sysPercentage, this.idlePercentage});
+      {this.userPercentage, this.sysPercentage, this.idlePercentage})
+      : super._();
 
   factory _$CpuUsageInfoModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CpuUsageInfoModelImplFromJson(json);
 
+  /// The percentage of CPU time spent on user processes.
   @override
   final double? userPercentage;
+
+  /// The percentage of CPU time spent on system (kernel) processes.
   @override
   final double? sysPercentage;
+
+  /// The percentage of CPU time spent idle.
   @override
   final double? idlePercentage;
 
@@ -172,20 +183,27 @@ class _$CpuUsageInfoModelImpl implements _CpuUsageInfoModel {
   }
 }
 
-abstract class _CpuUsageInfoModel implements CpuUsageInfoModel {
+abstract class _CpuUsageInfoModel extends CpuUsageInfoModel {
   const factory _CpuUsageInfoModel(
       {final double? userPercentage,
       final double? sysPercentage,
       final double? idlePercentage}) = _$CpuUsageInfoModelImpl;
+  const _CpuUsageInfoModel._() : super._();
 
   factory _CpuUsageInfoModel.fromJson(Map<String, dynamic> json) =
       _$CpuUsageInfoModelImpl.fromJson;
 
   @override
+
+  /// The percentage of CPU time spent on user processes.
   double? get userPercentage;
   @override
+
+  /// The percentage of CPU time spent on system (kernel) processes.
   double? get sysPercentage;
   @override
+
+  /// The percentage of CPU time spent idle.
   double? get idlePercentage;
   @override
   @JsonKey(ignore: true)

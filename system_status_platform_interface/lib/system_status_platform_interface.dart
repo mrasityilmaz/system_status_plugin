@@ -15,7 +15,7 @@ export 'package:system_status_platform_interface/src/Models/memory_statistics/me
 export 'package:system_status_platform_interface/src/Models/system_status/system_status_model.dart';
 export 'package:system_status_platform_interface/src/method_channel_system_status.dart';
 
-/// The interface that implementations of flutter_document_scanner
+/// The interface that implementations of SystemStatusPlatform
 /// must implement.
 ///
 /// Platform implementations should extend this class
@@ -30,11 +30,11 @@ abstract class SystemStatusPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static SystemStatusPlatform _instance = MethodChannelSytemStatus();
+  static SystemStatusPlatform _instance = MethodChannelSystemStatus();
 
   /// The default instance of [SystemStatusPlatform] to use.
   ///
-  /// Defaults to [MethodChannelSytemStatus].
+  /// Defaults to [MethodChannelSystemStatus].
   static SystemStatusPlatform get instance => _instance;
 
   /// Platform-specific plugins should set this with their own platform-specific
@@ -45,8 +45,14 @@ abstract class SystemStatusPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  /// Example
+  /// Fetches the system status based on the provided types.
+  ///
+  /// This method retrieves various system status information based on the specified
+  /// `systemStatusTypes`. It returns a `SystemStatusModel` object containing CPU usage,
+  /// disk space, memory statistics, and battery status information.
+  ///
+  /// Throws an [UnimplementedError] indicating that the method has not been implemented yet.
   Future<SystemStatusModel?> getSystemStatus({Set<SystemStatusTypeEnum>? systemStatusTypes}) {
-    throw UnimplementedError('fetchStatusExample() has not been implemented.');
+    throw UnimplementedError('getSystemStatus() has not been implemented.');
   }
 }

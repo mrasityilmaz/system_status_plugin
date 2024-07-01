@@ -20,15 +20,34 @@ BatteryStatusModel _$BatteryStatusModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BatteryStatusModel {
+  /// The current capacity of the battery in mAh (milliampere-hour).
   int? get currentCapacity => throw _privateConstructorUsedError;
+
+  /// The number of charge cycles the battery has gone through.
   int? get cycleCount => throw _privateConstructorUsedError;
+
+  /// Whether the battery is currently connected to an AC power source.
   bool? get acPowered => throw _privateConstructorUsedError;
+
+  /// Whether the battery is currently charging.
   bool? get isCharging => throw _privateConstructorUsedError;
+
+  /// Whether the battery is fully charged.
   bool? get isCharged => throw _privateConstructorUsedError;
+
+  /// The current amperage of the battery in mA (milliamperes).
   int? get amperage => throw _privateConstructorUsedError;
+
+  /// The voltage of the battery in volts.
   double? get voltage => throw _privateConstructorUsedError;
+
+  /// The power consumption of the battery in watts.
   double? get watts => throw _privateConstructorUsedError;
+
+  /// The temperature of the battery in degrees Celsius.
   double? get temperature => throw _privateConstructorUsedError;
+
+  /// A string representing the health status of the battery, defaulting to 'Unknown' if not provided.
   String get healthString => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -226,30 +245,49 @@ class _$BatteryStatusModelImpl extends _BatteryStatusModel {
       this.voltage,
       this.watts,
       this.temperature,
-      this.healthString = "Unknown"})
+      this.healthString = 'Unknown'})
       : super._();
 
   factory _$BatteryStatusModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$BatteryStatusModelImplFromJson(json);
 
+  /// The current capacity of the battery in mAh (milliampere-hour).
   @override
   final int? currentCapacity;
+
+  /// The number of charge cycles the battery has gone through.
   @override
   final int? cycleCount;
+
+  /// Whether the battery is currently connected to an AC power source.
   @override
   final bool? acPowered;
+
+  /// Whether the battery is currently charging.
   @override
   final bool? isCharging;
+
+  /// Whether the battery is fully charged.
   @override
   final bool? isCharged;
+
+  /// The current amperage of the battery in mA (milliamperes).
   @override
   final int? amperage;
+
+  /// The voltage of the battery in volts.
   @override
   final double? voltage;
+
+  /// The power consumption of the battery in watts.
   @override
   final double? watts;
+
+  /// The temperature of the battery in degrees Celsius.
   @override
   final double? temperature;
+
+  /// A string representing the health status of the battery, defaulting to 'Unknown' if not provided.
   @override
   @JsonKey()
   final String healthString;
@@ -332,24 +370,44 @@ abstract class _BatteryStatusModel extends BatteryStatusModel {
       _$BatteryStatusModelImpl.fromJson;
 
   @override
+
+  /// The current capacity of the battery in mAh (milliampere-hour).
   int? get currentCapacity;
   @override
+
+  /// The number of charge cycles the battery has gone through.
   int? get cycleCount;
   @override
+
+  /// Whether the battery is currently connected to an AC power source.
   bool? get acPowered;
   @override
+
+  /// Whether the battery is currently charging.
   bool? get isCharging;
   @override
+
+  /// Whether the battery is fully charged.
   bool? get isCharged;
   @override
+
+  /// The current amperage of the battery in mA (milliamperes).
   int? get amperage;
   @override
+
+  /// The voltage of the battery in volts.
   double? get voltage;
   @override
+
+  /// The power consumption of the battery in watts.
   double? get watts;
   @override
+
+  /// The temperature of the battery in degrees Celsius.
   double? get temperature;
   @override
+
+  /// A string representing the health status of the battery, defaulting to 'Unknown' if not provided.
   String get healthString;
   @override
   @JsonKey(ignore: true)

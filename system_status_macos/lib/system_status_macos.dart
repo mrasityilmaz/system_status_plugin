@@ -7,7 +7,7 @@ import 'package:system_status_platform_interface/system_status_platform_interfac
 /// An implementation of [SystemStatusPlatform]
 /// that uses method channels.
 
-class SytemStatusMacOS extends SystemStatusPlatform {
+class SystemStatusMacOS extends SystemStatusPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('system_status_macos');
@@ -15,7 +15,7 @@ class SytemStatusMacOS extends SystemStatusPlatform {
   /// Registers this class as the default instance
   /// of [SystemStatusPlatform]
   static void registerWith() {
-    SystemStatusPlatform.instance = SytemStatusMacOS();
+    SystemStatusPlatform.instance = SystemStatusMacOS();
   }
 
   @override

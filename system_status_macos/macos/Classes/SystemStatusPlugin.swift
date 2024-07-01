@@ -9,37 +9,31 @@ public class SystemStatusPlugin: NSObject, FlutterPlugin {
     }
     
    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    switch (call.method) {
+switch (call.method) {
     case "getSystemStatus":
-        do {
-            guard let arguments = call.arguments as? [String: Any],
-                  let flutterEnums = arguments["types"] as? [String] else {
-                throw ErrorsPlugin.stringError("Invalid Arguments")
-            }
-
-            let systemServicesEnums = flutterEnums.compactMap { convertToSystemServicesEnum($0) }
-            
-            let systemStatusService = SystemStatusService()
-            let systemStatus = systemStatusService.getSystemStatus(for: systemServicesEnums)
-            
-           if let jsonString = systemStatus.toJSON() {
-                result(jsonString)
-            } else {
-                result(FlutterError(
-                    code: "SystemStatusPlugin-Error",
-                    message: "Encoding Error",
-                    details: "Failed to encode SystemStatusModel to JSON"
-                ))
-            }
-        } catch {
+        let systemServicesEnums: [SystemServicesEnum]
+        
+        if let arguments = call.arguments as? [String: Any],
+           let types = arguments["types"] as? [String] {
+            systemServicesEnums = types.compactMap { convertToSystemServicesEnum($0) }
+        } else {
+            systemServicesEnums = []
+        }
+        
+        let systemStatusService = SystemStatusService()
+        let systemStatus = systemStatusService.getSystemStatus(for: systemServicesEnums)
+        
+        if let jsonString = systemStatus.toJSON() {
+            result(jsonString)
+        } else {
             result(FlutterError(
                 code: "SystemStatusPlugin-Error",
-                message: "getSystemStatus \(error.localizedDescription)",
-                details: error
+                message: "Encoding Error",
+                details: "Failed to encode SystemStatusModel to JSON"
             ))
         }
     default:
         result(FlutterMethodNotImplemented)
-    }
+}
 }
 }

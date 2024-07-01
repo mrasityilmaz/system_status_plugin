@@ -8,13 +8,27 @@ part 'system_status_model.freezed.dart';
 part 'system_status_model.g.dart';
 
 @freezed
+
+/// Model class representing system status information.
 class SystemStatusModel with _$SystemStatusModel {
+  /// Factory constructor for creating a new `SystemStatusModel` instance.
   const factory SystemStatusModel({
+    /// CPU usage information.
     CpuUsageInfoModel? cpuUsage,
+
+    /// Disk space information.
     DiskSpaceModel? diskSpace,
+
+    /// Memory statistics information.
     MemoryStatisticsModel? memoryStatistics,
+
+    /// Battery status information.
     BatteryStatusModel? batteryStatus,
   }) = _SystemStatusModel;
 
+  /// Private constructor for internal use.
+  const SystemStatusModel._();
+
+  /// Factory method for creating a `SystemStatusModel` from a JSON object.
   factory SystemStatusModel.fromJson(Map<String, dynamic> json) => _$SystemStatusModelFromJson(json);
 }

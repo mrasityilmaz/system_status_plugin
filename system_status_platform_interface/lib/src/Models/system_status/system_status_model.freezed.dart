@@ -20,10 +20,17 @@ SystemStatusModel _$SystemStatusModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SystemStatusModel {
+  /// CPU usage information.
   CpuUsageInfoModel? get cpuUsage => throw _privateConstructorUsedError;
+
+  /// Disk space information.
   DiskSpaceModel? get diskSpace => throw _privateConstructorUsedError;
+
+  /// Memory statistics information.
   MemoryStatisticsModel? get memoryStatistics =>
       throw _privateConstructorUsedError;
+
+  /// Battery status information.
   BatteryStatusModel? get batteryStatus => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -201,22 +208,30 @@ class __$$SystemStatusModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SystemStatusModelImpl implements _SystemStatusModel {
+class _$SystemStatusModelImpl extends _SystemStatusModel {
   const _$SystemStatusModelImpl(
       {this.cpuUsage,
       this.diskSpace,
       this.memoryStatistics,
-      this.batteryStatus});
+      this.batteryStatus})
+      : super._();
 
   factory _$SystemStatusModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$SystemStatusModelImplFromJson(json);
 
+  /// CPU usage information.
   @override
   final CpuUsageInfoModel? cpuUsage;
+
+  /// Disk space information.
   @override
   final DiskSpaceModel? diskSpace;
+
+  /// Memory statistics information.
   @override
   final MemoryStatisticsModel? memoryStatistics;
+
+  /// Battery status information.
   @override
   final BatteryStatusModel? batteryStatus;
 
@@ -260,23 +275,32 @@ class _$SystemStatusModelImpl implements _SystemStatusModel {
   }
 }
 
-abstract class _SystemStatusModel implements SystemStatusModel {
+abstract class _SystemStatusModel extends SystemStatusModel {
   const factory _SystemStatusModel(
       {final CpuUsageInfoModel? cpuUsage,
       final DiskSpaceModel? diskSpace,
       final MemoryStatisticsModel? memoryStatistics,
       final BatteryStatusModel? batteryStatus}) = _$SystemStatusModelImpl;
+  const _SystemStatusModel._() : super._();
 
   factory _SystemStatusModel.fromJson(Map<String, dynamic> json) =
       _$SystemStatusModelImpl.fromJson;
 
   @override
+
+  /// CPU usage information.
   CpuUsageInfoModel? get cpuUsage;
   @override
+
+  /// Disk space information.
   DiskSpaceModel? get diskSpace;
   @override
+
+  /// Memory statistics information.
   MemoryStatisticsModel? get memoryStatistics;
   @override
+
+  /// Battery status information.
   BatteryStatusModel? get batteryStatus;
   @override
   @JsonKey(ignore: true)
