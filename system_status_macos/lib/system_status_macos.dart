@@ -21,9 +21,9 @@ class SystemStatusMacOS extends SystemStatusPlatform {
   @override
   Future<SystemStatusModel?> getSystemStatus({Set<SystemStatusTypeEnum>? systemStatusTypes}) async {
     try {
-      final SystemStatusModel? systemStatusModel = await methodChannel.invokeMethod<String?>('getSystemStatus', {"types": systemStatusTypes?.map((e) => e.name).toList()}).then((stringValue) {
+      final systemStatusModel = await methodChannel.invokeMethod<String?>('getSystemStatus', {'types': systemStatusTypes?.map((e) => e.name).toList()}).then((stringValue) {
         if (stringValue != null) {
-          return SystemStatusModel.fromJson(json.decode(stringValue));
+          return SystemStatusModel.fromJson(json.decode(stringValue) as Map<String, dynamic>);
         }
         return null;
       });

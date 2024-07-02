@@ -1,16 +1,9 @@
 # system_status_platform_interface
 
-A new Flutter project.
+A common platform interface for the [system_status](https://github.com/mrasityilmaz/system_status_plugin).
 
-## Getting Started
+This interface allows platform-specific implementations of the system_status_plugin, as well as the plugin itself, to ensure they are supporting the same interface.
 
-This project is a starting point for a Flutter application.
+## Usage
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To implement a new platform-specific implementation of system_status_plugin, extend SystemStatusPlatform with an implementation that performs the platform-specific behavior.

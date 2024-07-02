@@ -1,7 +1,7 @@
 name: system_status_platform_interface
 description: A common platform interface for the system_status plugin.
 repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status/system_status_platform_interface
-version: 1.0.0
+version: 1.0.2
 
 
 environment:

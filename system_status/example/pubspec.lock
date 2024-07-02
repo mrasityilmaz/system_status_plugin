@@ -41,14 +41,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
-  cupertino_icons:
-    dependency: transitive
-    description:
-      name: cupertino_icons
-      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.8"
   fake_async:
     dependency: transitive
     description:
@@ -206,22 +198,23 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.2"
+    version: "1.0.6"
   system_status_macos:
     dependency: transitive
     description:
-      path: "../../system_status_macos"
-      relative: true
-    source: path
-    version: "1.0.0"
+      name: system_status_macos
+      sha256: "7387fd50ec767e36927acef7c172fce424dd6db60fece5c1ac87ed6f1120de38"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   system_status_platform_interface:
     dependency: transitive
     description:
       name: system_status_platform_interface
-      sha256: "9506d5b14e7507f1f8f86b99f33df74acd8dc901c9b798a15c245eda8e455e91"
+      sha256: "971a83021c9eb7c259c9931b832e6e8600b073b336e70b7d47469e87438e8e84"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.2"
   term_glyph:
     dependency: transitive
     description:

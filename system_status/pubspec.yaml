@@ -1,7 +1,7 @@
 name: system_status
 description: The system_status Plugin is a powerful and user-friendly tool designed to provide real-time statistics on RAM, battery, storage, and CPU usage for MacOS computers.
 repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status
-version: 1.0.5
+version: 1.0.6
 homepage: "https://github.com/mrasityilmaz/system_status_plugin"
 
 environment:
@@ -13,8 +13,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  system_status_macos: ^1.0.0
-  system_status_platform_interface: ^1.0.0
+  system_status_macos: ^1.0.1
+  system_status_platform_interface: ^1.0.2
 
 
 dev_dependencies:
@@ -23,6 +23,7 @@ dev_dependencies:
 
 
   plugin_platform_interface: ^2.0.0
+  very_good_analysis: ^6.0.0
 
 
 

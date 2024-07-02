@@ -1,7 +1,7 @@
 name: system_status_macos
 description: MacOS implementation of the system_status plugin
 repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status_macos
-version: 1.0.0
+version: 1.0.1
 
 
 environment:
@@ -22,17 +22,17 @@ dependencies:
   flutter:
     sdk: flutter
   
-  cupertino_icons: ^1.0.8
-  system_status_platform_interface: ^1.0.0
+  
+  system_status_platform_interface: ^1.0.2
 
 
 dev_dependencies:
+  flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^4.0.0
-  very_good_analysis: ^3.0.1
   plugin_platform_interface: ^2.0.0
+  very_good_analysis: ^3.0.1
 
 
 

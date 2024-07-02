@@ -1,3 +1,4 @@
+// ignore: unnecessary_library_directive
 library system_status;
 
 export 'package:system_status/system_status.dart';
