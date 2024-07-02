@@ -2,8 +2,10 @@ import FlutterMacOS
 import Cocoa
 
 public class SystemStatusPlugin: NSObject, FlutterPlugin {
+    private let systemStatusService = SystemStatusService()
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "system_status_macos", binaryMessenger: registrar.messenger)
+        
         let instance = SystemStatusPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
@@ -20,7 +22,7 @@ switch (call.method) {
             systemServicesEnums = []
         }
         
-        let systemStatusService = SystemStatusService()
+      
         let systemStatus = systemStatusService.getSystemStatus(for: systemServicesEnums)
         
         if let jsonString = systemStatus.toJSON() {

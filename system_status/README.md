@@ -21,7 +21,7 @@ To use this plugin, add `system_status` as a dependency in your `pubspec.yaml` f
 dependencies:
   flutter:
     sdk: flutter
-  system_status: ^1.0.6
+  system_status: ^1.0.7
 ```
 
 Then, import the package where you need to use it:
@@ -48,3 +48,6 @@ void getSystemStatus() async {
   }
 }
 ```
+
+
+![Example App - SS](image.png)

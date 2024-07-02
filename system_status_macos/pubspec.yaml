@@ -1,7 +1,7 @@
 name: system_status_macos
 description: MacOS implementation of the system_status plugin
 repository: https://github.com/mrasityilmaz/system_status_plugin/tree/main/system_status_macos
-version: 1.0.1
+version: 1.0.2
 
 
 environment:

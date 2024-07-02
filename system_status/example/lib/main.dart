@@ -53,7 +53,6 @@ class _SystemStatusPageState extends State<SystemStatusPage> {
       if (newSystemStatusModel != null) {
         setState(() {
           systemStatusModel = newSystemStatusModel;
-          print(systemStatusModel?.toJson());
         });
       }
     } catch (e) {
@@ -72,19 +71,21 @@ class _SystemStatusPageState extends State<SystemStatusPage> {
               padding: const EdgeInsets.all(16.0),
               children: [
                 ListTile(
-                  title: const Text('CPU Usage'),
+                  title: Text('CPU Usage - %${((systemStatusModel?.cpuUsage?.userPercentage ?? 0) + (systemStatusModel?.cpuUsage?.sysPercentage ?? 0)).toStringAsFixed(2)}'),
                   subtitle: Text(
                       'User: ${systemStatusModel?.cpuUsage?.userPercentage?.toStringAsFixed(2)}% | Sys: ${systemStatusModel?.cpuUsage?.sysPercentage?.toStringAsFixed(2)}% | Idle: ${systemStatusModel?.cpuUsage?.idlePercentage?.toStringAsFixed(2)}%'),
                 ),
                 ListTile(
-                  title: const Text('Battery'),
+                  title: Text('Battery - %${systemStatusModel?.batteryStatus?.currentCapacity}'),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Capacity: %${systemStatusModel?.batteryStatus?.currentCapacity}'),
                       Text('Health: ${systemStatusModel?.batteryStatus?.healthString}'),
                       Text('Charging: ${systemStatusModel?.batteryStatus?.isCharging == true ? 'Yes' : 'No'}'),
                       Text('Charged: ${systemStatusModel?.batteryStatus?.isCharged == true ? 'Yes' : 'No'}'),
+                      Text('Cycle Count: ${systemStatusModel?.batteryStatus?.cycleCount}'),
+                      Text('Ac Powered: ${systemStatusModel?.batteryStatus?.acPowered == true ? 'Yes' : 'No'}'),
+                      Text('Temperature: ${systemStatusModel?.batteryStatus?.temperature?.toStringAsFixed(2)} C'),
                     ],
                   ),
                 ),
@@ -101,11 +102,10 @@ class _SystemStatusPageState extends State<SystemStatusPage> {
                   ),
                 ),
                 ListTile(
-                  title: const Text('Memory Statistics'),
+                  title: Text('Memory Statistics - %${systemStatusModel?.memoryStatistics?.memoryUsageRatio?.toStringAsFixed(2)}'),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Usage Ratio: ${systemStatusModel?.memoryStatistics?.memoryUsageRatio?.toStringAsFixed(2)}%'),
                       Text('Application Memory: ${systemStatusModel?.memoryStatistics?.applicationMemory} bytes'),
                       Text('Wired Memory: ${systemStatusModel?.memoryStatistics?.wiredMemory} bytes'),
                       Text('Compressed Memory: ${systemStatusModel?.memoryStatistics?.compressedMemory} bytes'),
