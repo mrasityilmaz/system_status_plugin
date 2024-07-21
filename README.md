@@ -3,6 +3,8 @@
 <!-- ![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg) -->
 ![Platform](https://img.shields.io/badge/Platform-MacOS-green.svg)
 
+![ss](https://github.com/mrasityilmaz/system_status_plugin/blob/main/preview.png)
+
 
 system_status is a Flutter plugin that provides system status monitoring capabilities for MacOS computers. It allows you to monitor and display real-time statistics of RAM, battery, storage, and CPU usage.
 
